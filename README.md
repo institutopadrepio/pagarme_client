@@ -1,1 +1,1 @@
-# pagarme_client
+# gem_boilerplate
