@@ -6,6 +6,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Paulo Moncores"]
   s.files = ['lib/pagarme_client.rb', 
              'lib/pagarme_client/services/customers/create.rb',
+             'lib/pagarme_client/services/transactions/create.rb',
              'lib/pagarme_client/pagarme_base.rb'
             ]
   ### WARNING ###
@@ -21,4 +22,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry', '~> 0.13.1'
   s.add_development_dependency 'active_interaction', '~> 4.0'
   s.add_development_dependency 'httparty', '~> 0.13.7'
+  s.add_development_dependency 'vcr', '~> 3.0'
 end
