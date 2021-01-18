@@ -10,18 +10,12 @@ module PagarmeClient
         string :name, :email, :phone, :cpf, :id
 
         def execute
-          request = HTTParty.post("#{BASE_URL}/customers", customer_params)
-          raise request.message unless request.success?
-          JSON.parse(request.body)
+          PagarMe::Customer.create(customer_params)
         end
 
         private 
 
         def customer_params 
-          base_params.merge!(body: build_customer_params)
-        end
-
-        def build_customer_params 
           {}.tap do |hash|
             hash['external_id'] = id
             hash['name'] = name

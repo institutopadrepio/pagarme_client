@@ -9,6 +9,7 @@ module PagarmeClient
         integer :amount
 
         def execute
+          binding.pry
           request = HTTParty.post(
             "#{BASE_URL}/transactions", 
             transaction_params
