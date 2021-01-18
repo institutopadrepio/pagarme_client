@@ -1,5 +1,4 @@
 require 'spec_helper'
-#require 'pagarme_client/services/customers/create'
 
 RSpec.describe PagarmeClient::Services::Customers::Create do
   describe '#execute', vcr: true do 
