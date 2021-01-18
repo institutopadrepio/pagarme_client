@@ -2,6 +2,7 @@ require 'bundler/setup'
 Bundler.setup
 
 require 'pagarme_client' # and any other gems you need
+require 'pagarme'
 
 RSpec.configure do |config|
    # Enable flags like --only-failures and --next-failure

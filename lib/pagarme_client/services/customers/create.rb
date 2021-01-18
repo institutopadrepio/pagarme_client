@@ -1,13 +1,11 @@
 # frozen_string_literal: true
-
-require 'httparty'
 require 'pry'
 
 module PagarmeClient
   module Services 
     module Customers
       class Create < PagarmeClient::PagarmeBase
-        string :name, :email, :phone, :cpf, :id
+        string :name, :email, :phone, :cpf, :external_id
 
         def execute
           PagarMe::Customer.create(customer_params)
@@ -17,7 +15,7 @@ module PagarmeClient
 
         def customer_params 
           {}.tap do |hash|
-            hash['external_id'] = id
+            hash['external_id'] = external_id
             hash['name'] = name
             hash['type'] = 'individual'
             hash['country'] = 'br'

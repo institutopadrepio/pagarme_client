@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'pry'
 
 module PagarmeClient
   module Services 
@@ -9,24 +10,18 @@ module PagarmeClient
         integer :amount
 
         def execute
-          binding.pry
-          request = HTTParty.post(
-            "#{BASE_URL}/transactions", 
-            transaction_params
-          )
-          binding.pry
-          raise request.message unless request.success?
-          JSON.parse(request.body)
+          transaction = PagarMe::Transaction.new(transaction_params)
+          transaction.charge
+          {
+            boleto_url: transaction.boleto_url,
+            boleto_barcode: transaction.boleto_barcode
+          }
         end
 
         private 
 
         def transaction_params 
-          base_params.merge!(
-            {
-              body: build_transaction_params
-            }
-          )
+          build_transaction_params
         end
 
         def build_transaction_params 
@@ -65,7 +60,7 @@ module PagarmeClient
 
         def build_postback_url
           entity = donation? ? 'payment_notifications' : 'donation_notifications'
-          "https://#{BASE_URL}/#{entity}/#{resource_id}" 
+          "#{PagarmeClient::PagarmeBase::BASE_URL}/#{entity}/#{resource_id}" 
         end
 
       end

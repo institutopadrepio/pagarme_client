@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/customers
+    body:
+      encoding: UTF-8
+      string: '{"external_id":"#123456789","name":"Paulo Moncores","type":"individual","country":"br","email":"paulomoncores@test.com","documents":[{"type":"cpf","number":"46176314887"}],"phone_numbers":["+5511999999999"]}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '207'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.pagar.me
+      Authorization:
+      - Basic YWtfdGVzdF9OdUt0WndEZlo4UUNGbXViQmdlMXdkQkZuQUo4N1k6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Jan 2021 20:19:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d56656ef5ba76dbbfe2c7396e1934d0421611001143; expires=Wed, 17-Feb-21
+        20:19:03 GMT; path=/; domain=.pagar.me; HttpOnly; SameSite=Lax
+      Vary:
+      - X-HTTP-Method-Override
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Charset:
+      - utf-8
+      X-Pagarme-Version:
+      - '2017-08-28'
+      Etag:
+      - W/"1c8-ifJJsOrJp1kKbCS+Kqo6QI87CFA"
+      X-Response-Time:
+      - 55.414ms
+      X-Request-Id:
+      - 1e31eca1-d32b-457c-81a3-59671b652277
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 07b8bfb91d0000c528973db000000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 613b023b696dc528-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"customer","id":4572594,"external_id":"#123456789","type":"individual","country":"br","document_number":null,"document_type":"cpf","name":"Paulo
+        Moncores","email":"paulomoncores@test.com","phone_numbers":["+5511999999999"],"born_at":null,"birthday":null,"gender":null,"date_created":"2021-01-18T20:19:03.757Z","documents":[{"object":"document","id":"doc_ckk30hi310y9r0g9t0lgr2j2q","type":"cpf","number":"46176314887"}],"addresses":[],"phones":[]}'
+    http_version: null
+  recorded_at: Mon, 18 Jan 2021 20:19:03 GMT
+recorded_with: VCR 5.1.0

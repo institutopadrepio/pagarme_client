@@ -7,18 +7,19 @@ RSpec.describe PagarmeClient::Services::Transactions::Create do
     
     before(:each) do 
       ENV['PAGARME_API_KEY'] = 'ak_test_NuKtZwDfZ8QCFmubBge1wdBFnAJ87Y'
-      ENV['PAGARME_API_PASSWORD'] = 'x'
+      PagarMe.api_key = ENV['PAGARME_API_KEY']
     end
 
     it 'creates transactions on pagar.me' do 
-      
-      outcome = PagarmeClient::Services::Transactions::Create.run!(
+      outcome = PagarmeClient::Services::Transactions::Create.run(
         resource_id: "100",
         is_donation: false, 
         amount: 10000,
         name: 'Paulo Vitor dos Santos Zeferino',
         cpf: '06512424956'
       )
+      expect(outcome.result[:boleto_url]).not_to be_nil
+      expect(outcome.result[:boleto_barcode]).not_to be_nil
     end
   end
 end
