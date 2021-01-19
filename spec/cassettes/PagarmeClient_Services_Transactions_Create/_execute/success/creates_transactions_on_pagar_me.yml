@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.pagar.me/1/transactions
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"ak_test_NuKtZwDfZ8QCFmubBge1wdBFnAJ87Y","async":"false","amount":10000,"payment_method":"boleto","metadata":{"id_transacao":"100"},"postback_url":"https://api.pagar.me/1/donation_notifications/100","customer":{"type":"individual","country":"br","name":"Paulo
+        Vitor dos Santos Zeferino","documents":[{"type":"cpf","number":"08522325782"}]},"installments":1,"status":"local","card_expiration_date":""}'
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - pagarme-ruby/2.3.0
+      Content-Type:
+      - application/json; charset=utf8
+      Content-Length:
+      - '411'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - api.pagar.me
+      Authorization:
+      - Basic YWtfdGVzdF9OdUt0WndEZlo4UUNGbXViQmdlMXdkQkZuQUo4N1k6eA==
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 19 Jan 2021 11:39:23 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d77b5b9fc8866740fb9e11d2a2e1befd31611056363; expires=Thu, 18-Feb-21
+        11:39:23 GMT; path=/; domain=.pagar.me; HttpOnly; SameSite=Lax
+      Vary:
+      - X-HTTP-Method-Override
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE
+      Access-Control-Allow-Headers:
+      - Content-Type, Authorization, X-Requested-With, X-HTTP-Method-Override
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Charset:
+      - utf-8
+      X-Pagarme-Version:
+      - '2017-08-28'
+      Etag:
+      - W/"729-Qp8UjY/e8pmbR17pvQHMmAfm5Ek"
+      X-Response-Time:
+      - 393.328ms
+      X-Request-Id:
+      - 444b2ad7-6492-4e5f-a614-b6f88e698755
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - 07bc0a4e380000fd867c170000000001
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6140465d2e5bfd86-ORD
+    body:
+      encoding: ASCII-8BIT
+      string: '{"object":"transaction","status":"waiting_payment","refuse_reason":null,"status_reason":"acquirer","acquirer_response_code":null,"acquirer_name":"pagarme","acquirer_id":"5a3a49740f66950263323acb","authorization_code":null,"soft_descriptor":null,"tid":11138228,"nsu":11138228,"date_created":"2021-01-19T11:39:23.250Z","date_updated":"2021-01-19T11:39:23.551Z","amount":10000,"authorized_amount":10000,"paid_amount":0,"refunded_amount":0,"installments":1,"id":11138228,"cost":0,"card_holder_name":null,"card_last_digits":null,"card_first_digits":null,"card_brand":null,"card_pin_mode":null,"card_magstripe_fallback":false,"cvm_pin":false,"postback_url":"https://api.pagar.me/1/donation_notifications/100","payment_method":"boleto","capture_method":"ecommerce","antifraud_score":null,"boleto_url":"https://pagar.me","boleto_barcode":"1234
+        5678","boleto_expiration_date":"2021-01-26T03:00:00.000Z","referer":"api_key","ip":"142.118.59.255","subscription_id":null,"phone":null,"address":null,"customer":{"object":"customer","id":4576336,"external_id":null,"type":"individual","country":"br","document_number":null,"document_type":"cpf","name":"Paulo
+        Vitor dos Santos Zeferino","email":null,"phone_numbers":null,"born_at":null,"birthday":null,"gender":null,"date_created":"2021-01-19T11:39:23.215Z","documents":[{"object":"document","id":"doc_ckk3xd1p910cz0g9tnwy5taft","type":"cpf","number":"08522325782"}]},"billing":null,"shipping":null,"items":[],"card":null,"split_rules":null,"metadata":{"id_transacao":"100"},"antifraud_metadata":{},"reference_key":null,"device":null,"local_transaction_id":null,"local_time":null,"fraud_covered":false,"fraud_reimbursed":null,"order_id":null,"risk_level":"unknown","receipt_url":null,"payment":null,"addition":null,"discount":null,"private_label":null,"pix_qr_code":null,"pix_expiration_date":null}'
+    http_version: null
+  recorded_at: Tue, 19 Jan 2021 11:39:23 GMT
+recorded_with: VCR 5.1.0
