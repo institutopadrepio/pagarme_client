@@ -6,6 +6,7 @@ PagarMe.api_key = ENV['PAGARME_API_KEY']
 
 require 'pagarme_client/pagarme_base'
 require 'pagarme_client/services/customers/create'
+require 'pagarme_client/services/operations/create'
 
 
 module PagarmeClient

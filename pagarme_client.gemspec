@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Paulo Moncores"]
   s.files = ['lib/pagarme_client.rb', 
              'lib/pagarme_client/services/customers/create.rb',
-             'lib/pagarme_client/services/transactions/create.rb',
+             'lib/pagarme_client/services/operations/create.rb',
              'lib/pagarme_client/pagarme_base.rb'
             ]
   ### WARNING ###

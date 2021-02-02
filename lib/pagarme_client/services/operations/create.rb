@@ -3,7 +3,7 @@ require 'pry'
 
 module PagarmeClient
   module Services 
-    module Transactions
+    module Operations
       class Create < PagarmeClient::PagarmeBase
         string :resource_id, :name, :cpf
         boolean :is_donation

@@ -1,8 +1,8 @@
 require 'spec_helper'
-require 'pagarme_client/services/transactions/create'
+require 'pagarme_client/services/operations/create'
 require 'pry'
 
-RSpec.describe PagarmeClient::Services::Transactions::Create do
+RSpec.describe PagarmeClient::Services::Operations::Create do
   describe '#execute', vcr: true do 
     
     before(:each) do 
@@ -12,7 +12,7 @@ RSpec.describe PagarmeClient::Services::Transactions::Create do
 
     context 'success' do 
       it 'creates transactions on pagar.me' do 
-        outcome = PagarmeClient::Services::Transactions::Create.run(
+        outcome = PagarmeClient::Services::Operations::Create.run(
           resource_id: "100",
           is_donation: false, 
           amount: 10000,
@@ -26,7 +26,7 @@ RSpec.describe PagarmeClient::Services::Transactions::Create do
 
     context 'failure' do 
       it 'does not create pagar.me transaction' do 
-        outcome = PagarmeClient::Services::Transactions::Create.run(
+        outcome = PagarmeClient::Services::Operations::Create.run(
           resource_id: "100",
           is_donation: false, 
           amount: nil,
