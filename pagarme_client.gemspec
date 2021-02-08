@@ -1,7 +1,7 @@
 Gem::Specification.new do |s| 
   ### REQUIRED ###
   s.name        = 'pagarme_client'
-  s.version     = '1.1.1'
+  s.version     = '1.1.2'
   s.summary     = "Wrapper for Pagarme"
   s.authors     = ["Paulo Moncores"]
   s.files = ['lib/pagarme_client.rb', 
@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "vcr",     "~> 5.1"
   s.add_development_dependency "webmock", "~> 3.8"
   s.add_runtime_dependency "pagarme", "~> 2.3.0"
-  s.add_runtime_dependency "rest-client", "~> 2.0.1"
 end
 
 # Result = PagarmeClient::Services::Operations::Create.run!(
