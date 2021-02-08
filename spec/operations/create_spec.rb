@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'pagarme_client/services/operations/create'
-require 'pry'
 
 RSpec.describe PagarmeClient::Services::Operations::Create do
   describe '#execute', vcr: true do 
