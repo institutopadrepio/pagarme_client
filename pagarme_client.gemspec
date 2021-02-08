@@ -1,7 +1,7 @@
 Gem::Specification.new do |s| 
   ### REQUIRED ###
   s.name        = 'pagarme_client'
-  s.version     = '1.1.0'
+  s.version     = '1.1.1'
   s.summary     = "Wrapper for Pagarme"
   s.authors     = ["Paulo Moncores"]
   s.files = ['lib/pagarme_client.rb', 
@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rspec",   "~> 3.7"
   #s.add_development_dependency 'pry', '~> 0.13.1'
   s.add_runtime_dependency 'active_interaction', '~> 4.0'
-  s.add_runtime_dependency 'httparty', '~> 0.13.7'
   s.add_development_dependency "vcr",     "~> 5.1"
   s.add_development_dependency "webmock", "~> 3.8"
   s.add_runtime_dependency "pagarme", "~> 2.3.0"
