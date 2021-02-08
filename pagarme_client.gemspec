@@ -1,14 +1,15 @@
 Gem::Specification.new do |s| 
   ### REQUIRED ###
   s.name        = 'pagarme_client'
-  s.version     = '1.0.6'
+  s.version     = '1.0.9'
   s.summary     = "Wrapper for Pagarme"
   s.authors     = ["Paulo Moncores"]
   s.files = ['lib/pagarme_client.rb', 
              'lib/pagarme_client/services/customers/create.rb',
              'lib/pagarme_client/services/operations/create.rb',
              'lib/pagarme_client/services/operations/decorators/create.rb',
-             'lib/pagarme_client/pagarme_base.rb'
+             'lib/pagarme_client/pagarme_base.rb',
+             'lib/pagarme_client/application_decorator.rb'
             ]
   ### WARNING ###
   s.homepage    = 'https://www.padrepauloricardo.com'
