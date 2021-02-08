@@ -1,7 +1,7 @@
 Gem::Specification.new do |s| 
   ### REQUIRED ###
   s.name        = 'pagarme_client'
-  s.version     = '1.0.9'
+  s.version     = '1.1.0'
   s.summary     = "Wrapper for Pagarme"
   s.authors     = ["Paulo Moncores"]
   s.files = ['lib/pagarme_client.rb', 
@@ -22,16 +22,16 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake",    "~> 12.3.3"
   s.add_development_dependency "rspec",   "~> 3.7"
   #s.add_development_dependency 'pry', '~> 0.13.1'
-  s.add_development_dependency 'active_interaction', '~> 4.0'
-  s.add_development_dependency 'httparty', '~> 0.13.7'
+  s.add_runtime_dependency 'active_interaction', '~> 4.0'
+  s.add_runtime_dependency 'httparty', '~> 0.13.7'
   s.add_development_dependency "vcr",     "~> 5.1"
   s.add_development_dependency "webmock", "~> 3.8"
-  s.add_development_dependency "pagarme", "~> 2.3.0"
+  s.add_runtime_dependency "pagarme", "~> 2.3.0"
 end
 
 # Result = PagarmeClient::Services::Operations::Create.run!(
-#    resource_id: "1231231212312312",
-#        name: "Payulo",
+#     resource_id: "1231231212312311231232",
+#     name: "Payulo Vitor",
 #        cpf: "06512424956",
 #        is_donation: false,
 #        amount: 10000
