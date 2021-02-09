@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 module PagarmeClient
   module Services 
-    module Decorators
-      class Create < ApplicationDecorator
-
+    module Formatters
+      class Create < ApplicationFormatter
 
         def initialize(params)
           @params = params 
@@ -41,7 +40,7 @@ module PagarmeClient
         end
 
         def build_transaction_basic_info_params(hash)
-          hash[:api_key] = 'ak_test_NuKtZwDfZ8QCFmubBge1wdBFnAJ87Y' #ENV['PAGARME_API_KEY']
+          hash[:api_key] = 'ak_test_NuKtZwDfZ8QCFmubBge1wdBFnAJ87Y'
           hash[:async] = 'false'
           hash[:amount] = params[:amount]
           hash[:payment_method] = 'boleto'
@@ -57,8 +56,6 @@ module PagarmeClient
           entity = donation? ? 'payment_notifications' : 'donation_notifications'
           "#{PagarmeClient::PagarmeBase::BASE_URL}/#{entity}/#{params[:resource_id]}" 
         end
-
-
       end
     end
   end

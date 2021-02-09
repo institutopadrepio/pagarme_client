@@ -1,4 +1,4 @@
-class ApplicationDecorator
+class ApplicationFormatter
   Result = Struct.new(:success?, :error, :value)
 
   def self.call(*args)

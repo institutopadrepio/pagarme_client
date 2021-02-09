@@ -6,7 +6,6 @@ RSpec.describe PagarmeClient::Services::Operations::Create do
     
     before(:each) do 
       ENV['PAGARME_API_KEY'] = 'ak_test_NuKtZwDfZ8QCFmubBge1wdBFnAJ87Y'
-      PagarMe.api_key = ENV['PAGARME_API_KEY']
     end
 
     context 'success' do 
@@ -18,8 +17,8 @@ RSpec.describe PagarmeClient::Services::Operations::Create do
           name: 'Paulo Vitor dos Santos Zeferino',
           cpf: '08522325782'
         )
-        expect(outcome.result[:boleto_url]).not_to be_nil
-        expect(outcome.result[:boleto_barcode]).not_to be_nil
+        expect(outcome.result['boleto_url']).not_to be_nil
+        expect(outcome.result['boleto_barcode']).not_to be_nil
       end
     end
 

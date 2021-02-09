@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'json'
 module PagarmeClient
   module Services 
     module Operations
@@ -8,18 +9,23 @@ module PagarmeClient
         integer :amount
 
         def execute
-          transaction = PagarMe::Transaction.new(transaction_params)
-          transaction.charge
-          {
-            boleto_url: transaction.boleto_url,
-            boleto_barcode: transaction.boleto_barcode
-          }
+          raise 'Invalid Pagar.me transaction' unless pagarme_transaction.success?
+          JSON.parse(pagarme_transaction.body)
         end
+
 
         private 
 
+        def pagarme_transaction
+          @pagarme_transaction ||= Faraday.post(
+            "#{BASE_URL}/transactions", 
+            transaction_params.to_json, 
+            "Content-Type" => "application/json"
+          )
+        end
+
         def transaction_params 
-          result = PagarmeClient::Services::Decorators::Create.call({
+          result = PagarmeClient::Services::Formatters::Create.call({
             name: name,
             resource_id: resource_id,
             cpf: cpf,
