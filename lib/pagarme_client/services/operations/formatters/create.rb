@@ -40,7 +40,7 @@ module PagarmeClient
         end
 
         def build_transaction_basic_info_params(hash)
-          hash[:api_key] = 'ak_test_NuKtZwDfZ8QCFmubBge1wdBFnAJ87Y'
+          hash[:api_key] = PagarmeClient::PagarmeClientConfiguration.configuration.api_key
           hash[:async] = 'false'
           hash[:amount] = params[:amount]
           hash[:payment_method] = 'boleto'

@@ -5,7 +5,10 @@ RSpec.describe PagarmeClient::Services::Operations::Create do
   describe '#execute', vcr: true do 
     
     before(:each) do 
-      ENV['PAGARME_API_KEY'] = 'ak_test_NuKtZwDfZ8QCFmubBge1wdBFnAJ87Y'
+      PagarmeClient::PagarmeClientConfiguration.configure do |config|
+        config.api_key = 'ak_test_NuKtZwDfZ8QCFmubBge1wdBFnAJ87Y'
+        config.api_secret = 'x'
+      end
     end
 
     context 'success' do 

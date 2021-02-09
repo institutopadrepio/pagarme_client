@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pagarme_client (1.1.9)
+    pagarme_client (1.2.0)
       active_interaction (~> 4.0)
       faraday (~> 1.3)
 

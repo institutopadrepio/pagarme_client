@@ -1,7 +1,7 @@
 Gem::Specification.new do |s| 
   ### REQUIRED ###
   s.name        = 'pagarme_client'
-  s.version     = '1.2.0'
+  s.version     = '1.2.1'
   s.summary     = "Wrapper for Pagarme"
   s.authors     = ["Instituto Padre Pio"]
   s.files = ['lib/pagarme_client.rb', 
