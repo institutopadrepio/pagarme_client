@@ -53,7 +53,7 @@ module PagarmeClient
         end
 
         def build_postback_url
-          entity = donation? ? 'payment_notifications' : 'donation_notifications'
+          entity = donation? ? 'donation_notifications' : 'payment_notifications'
           "#{PagarmeClient::PagarmeBase::BASE_URL}/#{entity}/#{params[:resource_id]}" 
         end
       end
