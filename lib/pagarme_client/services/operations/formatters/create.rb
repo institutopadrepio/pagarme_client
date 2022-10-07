@@ -53,8 +53,7 @@ module PagarmeClient
         end
 
         def build_postback_url
-          entity = donation? ? 'donation_notifications' : 'payment_notifications'
-          "https://padrepauloricardo.org/#{entity}/#{params[:resource_id]}" 
+          "https://padrepauloricardo.org/handle_boleto_payment/#{params[:resource_id]}" 
         end
       end
     end
