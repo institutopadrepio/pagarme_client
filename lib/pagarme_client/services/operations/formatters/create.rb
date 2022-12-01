@@ -53,7 +53,7 @@ module PagarmeClient
         end
 
         def build_postback_url
-          "https://6a54-189-14-40-48.sa.ngrok.io/handle_boleto_payment/#{params[:resource_id]}" 
+          "https://padrepauloricardo.org/handle_boleto_payment/#{params[:resource_id]}" 
         end
       end
     end
