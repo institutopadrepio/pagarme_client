@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake",    "~> 12.3.3"
   s.add_development_dependency "rspec",   "~> 3.7"
   s.add_runtime_dependency 'active_interaction', '~> 4.0'
-  s.add_runtime_dependency 'faraday', '~> 1.10.0'
-  s.add_development_dependency "vcr",     "~> 5.1"
-  s.add_development_dependency "webmock", "~> 3.8"
+  s.add_runtime_dependency 'faraday', '>= 1.10.0'
+  s.add_development_dependency "vcr",     ">= 5.1"
+  s.add_development_dependency "webmock", ">= 3.8"
 end
